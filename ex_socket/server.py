@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding= gbk 
+#-*- coding: gbk -*- 
 # file name server.py
 
 import socket
@@ -17,7 +17,7 @@ while True :
     c.send(('欢迎你，菜鸟!\n' +'收到请回答!').encode())  #encode()转换成str,decode()转换成bety
     #c.send(('收到请应答!!!').encode())
     recvdata=c.recv(1024)
-    print(recvdata)
+    print(recvdata.decode())
     if (len(recvdata) >  0):
         c.send(recvdata)
     else :

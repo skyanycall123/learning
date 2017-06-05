@@ -17,9 +17,10 @@ while True :
     c.send(('欢迎你，菜鸟!\n' +'收到请回答!').encode())  #encode()转换成str,decode()转换成bety
     #c.send(('收到请应答!!!').encode())
     recvdata=c.recv(1024)
-    print(recvdata.decode())
+    stringrecvdata=recvdata.decode()
+    print('client:' + recvdata.decode())
     if (len(recvdata) >  0):
-        c.send(recvdata)
+        c.send(('收到回应消息--'+stringrecvdata).encode())
     else :
         c.send((' have not get the message !').encode())   
     
